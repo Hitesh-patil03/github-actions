@@ -1,0 +1,36 @@
+#this is name of workflow
+name: CICD
+
+# manually triggers (click button)
+on: 
+  workflow_dispatch: 
+
+jobs:
+
+# this is name of job
+  code:
+    runs-on: ubuntu-latest     # this is github runner 
+    steps:
+      - name: code checkout
+        run: echo "code clone from github"
+
+# this is name of job       
+  build:
+    runs-on: ubuntu-latest     # this is github runner 
+    steps:
+      - name: code build 
+        run: echo "code build successfully"
+
+   # this is name of job    
+  test:
+    runs-on: ubuntu-latest    # this is github runner 
+    steps:
+      - name: code test
+        run: echo "code test successfully"
+
+ # this is name of job       
+  deploy:
+    runs-on: ubuntu-latest    # this is github runner 
+    steps:
+      - name: code deploy to server
+        run: echo "code deploy to server"

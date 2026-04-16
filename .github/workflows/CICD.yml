@@ -16,6 +16,7 @@ jobs:
 
 # this is name of job       
   build:
+    needs: code
     runs-on: ubuntu-latest     # this is github runner 
     steps:
       - name: code build 
@@ -23,6 +24,7 @@ jobs:
 
    # this is name of job    
   test:
+    needs: build
     runs-on: ubuntu-latest    # this is github runner 
     steps:
       - name: code test
@@ -30,6 +32,7 @@ jobs:
 
  # this is name of job       
   deploy:
+    needs: test
     runs-on: ubuntu-latest    # this is github runner 
     steps:
       - name: code deploy to server

@@ -1,14 +1,29 @@
-
+#this is name of eorkflow
 name: hello
-on:
-  push:
-    branches: [main]
+
+# need to press button for triggers
+on: 
+  workflow_dispatch: 
+
+# triggers when commit changes to main branch 
+#on:
+#  push:
+#    branches: [main]
       
 jobs:
+
+# this is name of job
   greet:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest     # this is github runner 
     steps:
       - name: say hello to users
         run: echo "hello dosto"
       - name: say hello to username
         run: echo "hello $USER"
+
+  show-version:
+    runs-on: ubuntu-latest
+    steps:
+    - name: show python version
+      run: python --version
+    

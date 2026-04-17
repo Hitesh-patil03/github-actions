@@ -1,7 +1,11 @@
 name: Python Matrix Demo
 
 on:
+<<<<<<< HEAD
   workflow_dispatch:
+=======
+  workflow_dispatch: 
+>>>>>>> 585d2215cc9817c22f782f82033c720419fcd8c9
 
 jobs:
   say-hello:

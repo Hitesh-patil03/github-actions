@@ -1,24 +1,25 @@
+---
 name: Python Matrix Demo
-
 on:
-  workflow_dispatch:
-
+  workflow_dispatch: null
 jobs:
   say-hello:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        python-version: [3.8, 3.9, "3.10", "3.11"]
-
+        python-version:
+          - 3.8
+          - 3.9
+          - "3.10"
+          - "3.11"
       steps:
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
+        - name: Set up Python ${{ matrix.python-version }}
+          uses: actions/setup-python@v5
+          with:
+            python-version: ${{ matrix.python-version }}
 
-      - name: Print Python version
-        run: python --version
-
-      - name: Echo Hello
-        run: echo "hello from Python ${{ matrix.python-version }}"
+        - name: Print Python version
+          run: python --version
+          
+        - name: Echo Hello
+          run: echo "hello from Python ${{ matrix.python-version }}"

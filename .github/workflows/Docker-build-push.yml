@@ -8,21 +8,21 @@ jobs:
     runs-on: ubuntu-latest 
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: login to dockerhub
-      uses: docker/login-action@v3
-      with:
-         username: ${{ vars.DOCKERHUB_USER }}
-         password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: login to dockerhub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: build & push docker image 
-      uses: docker/build-push-action@v6
-      with:
-        push: true
-        tags: |
-          ${{ vars.DOCKERHUB_USER }}/github-actions:${{ github_ref_name}}
-          ${{ vars.DOCKERHUB_USER }}/github-actions:latest
-          ${{ vars.DOCKERHUB_USER }}/github-actions:${{ github_sha}}
-    
+      - name: build & push docker image 
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: |
+            ${{ vars.DOCKERHUB_USER }}/github-actions:${{ github_ref_name}}
+            ${{ vars.DOCKERHUB_USER }}/github-actions:latest
+            ${{ vars.DOCKERHUB_USER }}/github-actions:${{ github_sha}}
+      

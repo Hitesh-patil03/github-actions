@@ -7,14 +7,11 @@ jobs:
   code-quality:
     uses: ./.github\workflows\code-quality.yml
   
-
   secrets-scan:
     uses: ./.github\workflows\python-matrix.yml
   
-
   dependency-scan:
     uses: ./.github\workflows\code-quality.yml
-
 
   docker-scan:
     uses: ./.github\workflows\docker-lint.yml

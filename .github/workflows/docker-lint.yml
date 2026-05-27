@@ -1,4 +1,4 @@
-name: docker linter
+name: docker lint
 
 on: 
   workflow_call:

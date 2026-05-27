@@ -1,0 +1,21 @@
+name: deploy to server
+
+on:
+  workflow_call:
+
+jobs: 
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ssh to prod server
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.EC2_SSH_HOST }}
+          username: ${{ secrets.EC2_SSH_USER }}
+          KEY: $ {{ secrets.EC2_SSH_PRIVATE_KEY }}
+          script: | 
+            echo "starting deployment"
+          
+         
+        
+          

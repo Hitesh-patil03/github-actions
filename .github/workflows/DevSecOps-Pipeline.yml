@@ -17,6 +17,6 @@ jobs:
     uses: ./.github/workflows/docker-lint.yml
 
   build:
-    needs: [code-quality,  secrets-scan,   dependency-scan,  docker-scan]
+    needs: [code-quality,  secrets-scan,   dependency-scan, docker-scan]
     uses: ./.github/workflows/Docker-build-push.yml
-    secrets: inherits
+    secrets: inherit

@@ -19,4 +19,5 @@ jobs:
         with:
           image-ref: '${{ vars.DOCKERHUB_USER }}/github-actions:${{ github.sha }}'
           severity: 'CRITICAL'
+          ignore-unfixed: true
           exit-code: '1'

@@ -23,4 +23,4 @@ jobs:
           image-ref: '${{ vars.DOCKERHUB_USER }}/github-actions:${{ github.sha }}'
           severity: 'CRITICAL'
           exit-code: '1'
-          trivyignore: ${{ github.workspace }}/.trivyignore
+          ignore-unfixed: true

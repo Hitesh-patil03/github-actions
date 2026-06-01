@@ -1,9 +1,11 @@
-FROM python:3.12-slim
+FROM python:3.13-slim
 
 WORKDIR /app
 
-COPY . . 
+COPY . .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python", "app.py"]
+EXPOSE 80
+
+CMD ["gunicorn","--bind", "0.0.0.0:80", "app:app"]
